@@ -4,8 +4,30 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- where should the nuget package be created at -->
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+
+    <!-- nuget related properties -->
+    <Authors>Ryan Mitchell</Authors>
+    <Description>API Client to retrieve current exchange rate from Norge Bank</Description>
+    <Version>1.0.0</Version>
+    <Copyright>Copyright 2020 © Ryan Mitchell. All rights reserved.</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/yippykaiyay012/NorgesBankAPIClientLibrary</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageIcon></PackageIcon>
+  </PropertyGroup>
+
+
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="nupkg\" />
   </ItemGroup>
 
 </Project>
