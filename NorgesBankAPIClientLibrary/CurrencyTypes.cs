@@ -13,6 +13,5 @@ namespace NorgesBankAPIClientLibrary
         EUR,
         SEK,
         SGD,
-        NOK
     }
 }
