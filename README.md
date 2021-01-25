@@ -1,7 +1,7 @@
 # NorgesBankAPIClientLibrary
 
 
-
+[![Nuget](https://img.shields.io/nuget/v/NorgesBankAPIClientLibrary)](https://www.nuget.org/packages/NorgesBankAPIClientLibrary//)
 
 
 ## Install
