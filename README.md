@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-Install-Package NorgesBankAPIClientLibrary -Version 1.0.1
+Install-Package NorgesBankAPIClientLibrary -Version 1.0.4
 ```
 
 
