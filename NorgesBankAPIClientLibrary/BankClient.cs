@@ -48,12 +48,18 @@ namespace NorgesBankAPIClientLibrary
             var rootObject = JsonConvert.DeserializeObject<BankResult>(jsonString);
 
             var value = rootObject.data.dataSets[0].series._0000.observations._0[0];
-
-            var multiplier = rootObject.data.structure.attributes.series[2].values[0].name;
-
             var decimalValue = decimal.Parse(value);
 
-            var returnValue = new CurrencyValue { Currency = currency, Value = decimalValue, Multiplier = multiplier };
+            var multiplier = rootObject.data.structure.attributes.series[2].values[0].name;
+            int multiplierInt;
+            int.TryParse(rootObject.data.structure.attributes.series[2].values[0].id,  out multiplierInt);
+
+            var correctedValue = decimalValue / (decimal)Math.Pow(10, multiplierInt);
+
+            DateTime observationDate;
+            DateTime.TryParse(rootObject.data.structure.dimensions.observation[0].values[0].name, out observationDate);
+
+            var returnValue = new CurrencyValue { Currency = currency, Value = decimalValue, Multiplier = multiplier , CorrectedValue = correctedValue,  ObservationDate = observationDate };
 
             return returnValue;
         }
