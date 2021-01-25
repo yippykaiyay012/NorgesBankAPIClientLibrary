@@ -18,8 +18,7 @@ Install-Package NorgesBankAPIClientLibrary -Version 1.0.1
     using(var client = new BankClient())
     {
         // Single Currency Value
-        var result = await client.GetCurrencyValue(CurrencyTypes.GBP);
-        Console.WriteLine($"{result.Currency} {result.Value}");           
+        var result = await client.GetCurrencyValue(CurrencyTypes.GBP);          
     
         //List of Currency Values
         var results = await client.GetCurrencyValues(new List<CurrencyTypes>
@@ -32,6 +31,16 @@ Install-Package NorgesBankAPIClientLibrary -Version 1.0.1
             CurrencyTypes.SGD,
             CurrencyTypes.USD
         });
+        
+         foreach (var resultItem in results)
+         {
+            //Available properties
+            Console.WriteLine($"Currency: {resultItem.Currency} \t " +
+                                $"Observation: {resultItem.Value} \t " +
+                                $"Multiplier: {resultItem.Multiplier} \t " +
+                                $"Corrected Value: {resultItem.CorrectedValue} \t " +
+                                $"Observation Date: {resultItem.ObservationDate.ToShortDateString()}");
+         }
     }
             
 ```
