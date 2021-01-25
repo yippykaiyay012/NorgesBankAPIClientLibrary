@@ -11,7 +11,7 @@
     <!-- nuget related properties -->
     <Authors>Ryan Mitchell</Authors>
     <Description>API Client to retrieve current exchange rate from Norge Bank</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.3</Version>
     <Copyright>Copyright 2020 © Ryan Mitchell. All rights reserved.</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/yippykaiyay012/NorgesBankAPIClientLibrary</RepositoryUrl>

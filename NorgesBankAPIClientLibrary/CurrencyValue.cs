@@ -8,5 +8,6 @@ namespace NorgesBankAPIClientLibrary
     {
         public CurrencyTypes Currency { get; set; }
         public decimal Value { get; set; }
+        public string Multiplier { get; set; }
     }
 }
