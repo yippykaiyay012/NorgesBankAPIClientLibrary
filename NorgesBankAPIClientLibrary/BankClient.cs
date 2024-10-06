@@ -48,7 +48,11 @@ namespace NorgesBankAPIClientLibrary
             var rootObject = JsonConvert.DeserializeObject<BankResult>(jsonString);
 
             var value = rootObject.data.dataSets[0].series._0000.observations._0[0];
-            var decimalValue = decimal.Parse(value);
+            decimal decimalValue;
+            if (!decimal.TryParse(value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out decimalValue))
+            {
+                throw new FormatException($"Unable to parse '{value}' to decimal.");
+            }
 
             var multiplier = rootObject.data.structure.attributes.series[2].values[0].name;
             int multiplierInt;
